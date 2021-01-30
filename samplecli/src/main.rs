@@ -82,3 +82,14 @@ impl RpnCalculator {
         }
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_ok() {
+        let calc = RpnCalculator::new(false);
+        assert_eq!(calc.eval("2 2 *"), 4);
+    }
+}
