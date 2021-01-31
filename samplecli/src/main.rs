@@ -1,8 +1,8 @@
 use anyhow::{bail, ensure, Context, Result};
 use clap::Clap;
 use std::fs::File;
-use std::path::PathBuf;
 use std::io::{stdin, BufRead, BufReader};
+use std::path::PathBuf;
 
 #[derive(Clap, Debug)]
 #[clap(
