@@ -22,7 +22,8 @@ impl From<std::io::Error> for MyError {
 
 fn get_int_from_file() -> Result<i32, MyError> {
     let path = "number.txt";
-    let num_str = std::fs::read_to_string(path).map_err(MyError::from)?;
+    // From があれば map_err() は不要っぽい。
+    let num_str = std::fs::read_to_string(path) /* .map_err(MyError::from) */?;
     num_str
         .trim()
         .parse::<i32>()
